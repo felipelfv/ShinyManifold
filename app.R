@@ -1,7 +1,7 @@
 library(shiny)
 library(plotly)
 
-# The function you provided
+#function for generating the data points
 generate_manifold <- function(n_points, n_dims, noise_level) {
   X <- matrix(runif(n_points * n_dims), nrow = n_points)
   noise <- matrix(rnorm(n_points * n_dims, 0, noise_level), nrow = n_points)
@@ -11,7 +11,7 @@ generate_manifold <- function(n_points, n_dims, noise_level) {
   return(X)
 }
 
-# Define Shiny app
+#defining the shiny app (this was done with the help of ChatGPT as in August 3 version)
 ui <- fluidPage(
   titlePanel("Interactive Manifold"),
   sidebarLayout(
